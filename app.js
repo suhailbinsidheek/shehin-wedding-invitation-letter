@@ -1,5 +1,5 @@
 /* ==========================================================================
-   INTERACTIVE ENGINE - ALEXANDER & ISABELLA WEDDING (ROMANTIC PRESETS)
+   INTERACTIVE ENGINE - SHEHIN & AMEENA WEDDING (ROMANTIC PRESETS)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Default blessings to populate wishes wall
     const defaultWishes = [
-        { name: "Eleanor & Charles (Parents)", message: "Our hearts are overflowing with joy for you both. May your lifetime together be filled with laughter, adventure, and endless love.", category: "Parents" },
-        { name: "Marcus Sterling (Best Man)", message: "To my best friend Alexander and the wonderful Isabella—wishing you a beautiful wedding and a marriage that grows stronger every day. Cheers!", category: "Best Man" },
-        { name: "Emily Watson (Maid of Honor)", message: "I've watched your love blossom from that coffee shop accident into this beautiful journey. So honored to stand by you!", category: "Maid of Honor" }
+        { name: "Parents", message: "Our hearts are overflowing with joy for you both. May your lifetime together be filled with laughter, adventure, and endless love.", category: "Parents" },
+        { name: "Saahir (Best Man)", message: "To my best friend Shehin and the wonderful Ameena—wishing you a beautiful wedding and a marriage that grows stronger every day. Cheers!", category: "Best Man" },
+        { name: "Safwana (Maid of Honor)", message: "I've watched your love blossom into this beautiful journey. So honored to stand by you on this blessed day!", category: "Maid of Honor" }
     ];
 
     // 2. CANVAS PARTICLE ENGINE (Falling Rose Petals & Golden Stardust)
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 grid.innerHTML = `
                     <div class="countdown-card" style="grid-column: span 4; padding: 3rem;">
                         <span class="countdown-value" style="font-size: 1.8rem; letter-spacing: 2px;">THE WEDDING HAS BEGUN!</span>
-                        <span class="countdown-label">Celebrating Alexander & Isabella's Marriage | May 21, 2026</span>
+                        <span class="countdown-label">Celebrating Shehin & Ameena's Marriage | May 21, 2026</span>
                     </div>`;
             }
             return true;
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getSavedWishes() {
-        const stored = localStorage.getItem('wedding_rsvps_alexander_isabella');
+        const stored = localStorage.getItem('wedding_rsvps_shehin_ameena');
         if (stored) {
             try {
                 const parsed = JSON.parse(stored);
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Security Alert: Local storage corrupted or modified maliciously, resetting.", e);
             }
         }
-        localStorage.setItem('wedding_rsvps_alexander_isabella', JSON.stringify(defaultWishes));
+        localStorage.setItem('wedding_rsvps_shehin_ameena', JSON.stringify(defaultWishes));
         return defaultWishes;
     }
 
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const existing = getSavedWishes();
             existing.unshift(newWish);
-            localStorage.setItem('wedding_rsvps_alexander_isabella', JSON.stringify(existing));
+            localStorage.setItem('wedding_rsvps_shehin_ameena', JSON.stringify(existing));
 
             triggerCelebrationBurst();
             
@@ -655,18 +655,18 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const eventType = btn.getAttribute('data-event');
             
-            let title = "Alexander & Isabella's Solemn Nikah Ceremony";
-            let desc = "Witness the sacred Nikah wedding vows of Alexander & Isabella.";
-            let start = "20260521T160000";
-            let end = "20260521T173000";
-            let location = "The Rose Garden Conservatory, Hudson Valley, NY";
+            let title = "Shehin & Ameena's Solemn Nikah Ceremony";
+            let desc = "Witness the sacred Nikah wedding vows of Shehin & Ameena.";
+            let start = "20260521T113000";
+            let end = "20260521T120000";
+            let location = "Vallakkadavu Convention Centre";
 
             if (eventType === 'reception') {
-                title = "Alexander & Isabella's Grand Feast & Banquet";
-                desc = "Celebrate the marriage of Alexander & Isabella with gourmet dining and sparkling cordials.";
+                title = "Shehin & Ameena's Grand Feast & Banquet";
+                desc = "Celebrate the marriage of Shehin & Ameena with gourmet dining and delicious treats.";
                 start = "20260521T180000";
-                end = "20260522T000000";
-                location = "The Grand Pavilion & Meadows, Hudson Valley, NY";
+                end = "20260521T210000";
+                location = "Kamaleswaram Nagarasabha Convention Centre, MLA Road, Manacaud P.Ο.";
             }
 
             const icsContent = [
