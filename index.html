@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Save The Date - Join us in celebrating the wedding of Alexander & Isabella. May 21, 2026. RSVP & view event details.">
+    <title>Save the Date | Alexander & Isabella's Wedding Invitation</title>
+    
+    <!-- Open Graph Metadata (for elegant social sharing) -->
+    <meta property="og:title" content="Save the Date | Alexander & Isabella">
+    <meta property="og:description" content="We are getting married! Join us on May 21, 2026, to celebrate our special day. RSVP inside.">
+    <meta property="og:image" content="assets/hero_bg.png">
+    <meta property="og:type" content="website">
+
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-day">
+    <!-- Background Canvas for Interactive Rose Petal or Sparkle Particle Effects -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Floating Top Bar (Controls) -->
+    <header class="main-header">
+        <div class="header-logo">S & A</div>
+        <div class="controls-group">
+            <!-- Theme Toggle: Day Romance / Starry Night -->
+            <button id="theme-toggle" class="btn-control" aria-label="Toggle Night Mode" title="Toggle Theme">
+                <!-- Sun Icon (for starry night transition) -->
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <!-- Moon Icon (for day romance transition) -->
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+            
+            
+            <div class="music-widget">
+                <!-- Custom Local Audio Input (Hidden) -->
+                <input type="file" id="local-audio-input" accept="audio/*" style="display: none;">
+                
+                <!-- Upload Button -->
+                <button id="audio-upload" class="btn-control" aria-label="Upload Custom MP3" title="Upload Custom Background Music">
+                    <svg class="icon-upload" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </button>
+
+                <!-- Audio Play Toggle -->
+                <button id="audio-toggle" class="btn-control" aria-label="Toggle Romantic Theme" title="Toggle Music">
+                    <svg class="icon-music" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <!-- Audio Equalizer Bars -->
+                    <span class="eq-container">
+                        <span class="eq-bar bar-1"></span>
+                        <span class="eq-bar bar-2"></span>
+                        <span class="eq-bar bar-3"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Romantic Audio Source -->
+    <audio id="romantic-stream" src="assets/rasoolallah.mp3" loop></audio>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="decorative-icon animate-pulse">
+                    <svg viewBox="0 0 100 100" class="heart-lock-svg" aria-hidden="true">
+                        <!-- Interlocking Double Hearts (Timeless Romance Symbol) -->
+                        <path d="M 35,35 C 23,20 5,20 5,42 C 5,64 35,85 35,85 C 35,85 65,64 65,42 C 65,20 47,20 35,35 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M 65,35 C 53,20 35,20 35,42 C 35,64 65,85 65,85 C 65,85 95,64 95,42 C 95,20 77,20 65,35 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                
+                <h2 class="hero-subtitle">SAVE THE DATE </h2>
+                
+                <h1 class="hero-title">
+                    <span class="name-first">Shehin T S</span>
+                    <span class="ampersand">weds</span>
+                    <span class="name-second">Ameena</span>
+                </h1>
+                
+                <div class="announcement-box">
+                    <h3 class="highlight-text">WE ARE GETTING MARRIED</h3>
+                    <p class="announcement-body">Cordially invite your esteemed presence and prayers with family on the auspicious occasion of the marriage </p>
+                </div>
+                
+                <div class="wedding-brief">
+                    <div class="brief-item">
+                        <span class="brief-label">THE DATE</span>
+                        <span class="brief-value">May 21, 2026</span>
+                        <span class="brief-sub">Four O'Clock PM</span>
+                    </div>
+                    <div class="brief-divider"></div>
+                    <a href="https://maps.app.goo.gl/ChCcYttw6CRRmYbZ8?g_st=acp" target="_blank" rel="noopener noreferrer" class="brief-item venue-link-card" title="View Venue on Google Maps">
+                        <span class="brief-label">THE VENUE 📍</span>
+                        <span class="brief-value">KAMALESHWARAM CONVENTION CENTRE AND HEALTH CENTRE  </span>
+                        <span class="brief-sub">Nearest  domestic airport, Thiruvananthapuram</span>
+                    </a>
+                </div>
+
+                <a href="#down" class="btn-primary ripple-effect">SLIDE TO </a>
+                
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll to explore </span>
+                    <span class="scroll-arrow"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER SECTION -->
+        <section id="countdown" class="countdown-section">
+            <div class="container text-center">
+                <h3 class="section-title slide-up-reveal">COUNTING DOWN THE SECONDS</h3>
+                <p class="section-desc slide-up-reveal">Until we officially say "I Do"</p>
+                
+                <div class="countdown-grid">
+                    <div class="countdown-card scale-in-reveal" id="cd-days">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-card scale-in-reveal" id="cd-hours">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-card scale-in-reveal" id="cd-minutes">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-card scale-in-reveal" id="cd-seconds">
+                        <span class="countdown-value">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+    
+
+        <!-- THE PHOTO DUMP GALLERY -->
+        <section id="gallery" class="gallery-section" >
+            <div class="container ">
+                <h3 id="down" class="section-title text-center slide-up-reveal">THE PHOTO </h3>
+                <p class="section-desc text-center slide-up-reveal">Visual logs of our highlights, smiles, and aesthetics</p>
+                
+                <div class="gallery-grid">
+                    <!-- Polaroid 1 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="image">
+                        <img src="./assets/6084479353212309948_121.jpg" alt="Engagement Shoot in Central Park" class="gallery-img">
+                        <div class="polaroid-caption">We are</div>
+                        <div class="gallery-overlay">
+                            <span>see</span>
+                        </div>
+                    </div>
+                    <!-- Polaroid 2 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="video">
+                        <div class="video-container-polaroid">
+                            <video src="./assets/6084479352752315372.mp4" class="gallery-video" muted loop playsinline autoplay></video>
+                        </div>
+                        <div class="polaroid-caption">Day yellow</div>
+                        <div class="gallery-overlay">
+                            <span>Play Video 🎥</span>
+                        </div>
+                    </div>
+                    <!-- Polaroid 3 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="image">
+                        <img src="./assets/2.jpg" alt="Shared smiles at the flower market" class="gallery-img">
+                        <div class="polaroid-caption">groom to be</div>
+                        <div class="gallery-overlay">
+                            <span>see</span>
+                        </div>
+                    </div>
+                    <!-- Polaroid 4 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="image">
+                        <img src="./assets/4.jpg" alt="Paris Seine proposal milestone portrait" class="gallery-img">
+                        <div class="polaroid-caption">We are</div>
+                        <div class="gallery-overlay">
+                            <span>see</span>
+                        </div>
+                    </div>
+                    <!-- Polaroid 5 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="video">
+                        <div class="video-container-polaroid">
+                            <video src="./assets/offer.mp4" class="gallery-video" muted loop playsinline autoplay></video>
+                        </div>
+                        <div class="polaroid-caption">Groom to be</div>
+                        <div class="gallery-overlay">
+                            <span>Play Video 🎥</span>
+                        </div>
+                    </div>
+                    <!-- Polaroid 6 -->
+                    <div class="gallery-item polaroid-card scale-in-reveal" data-type="image">
+                        <img src="./assets/kk.jpg" alt="Cozy rainy coffee shop dates" class="gallery-img">
+                        <div class="polaroid-caption">Day yellow</div>
+                        <div class="gallery-overlay">
+                            <span>see</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE SCHED -->
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <h3 class="section-title text-center slide-up-reveal">THE SCHEDULE</h3>
+                <p class="section-desc text-center slide-up-reveal">When & where </p>
+                
+                <div class="schedule-cards">
+                    <!-- Event 1: Ceremony -->
+                    <div class="schedule-card slide-left-reveal">
+                        <div class="card-icon">🕌</div>
+                        <h4 class="card-title">THE NIKAH CEREMONY</h4>
+                        <div class="card-meta">
+                            <span class="card-time">11:30 AM - 12:00 PM</span>
+                            <span class="card-venue">Vallakkadavu Convention Centre</span>
+                        </div>
+                        <p class="card-details"> </p>
+                        <div class="nikah-blessing">
+                            <p class="blessing-arabic">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                            <p class="blessing-translation">"May Allah bless you, and shower His blessings upon you, and join you together in goodness."</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn-secondary add-calendar" data-event="ceremony">ADD TO CALENDAR</a>
+                            <a href="https://maps.app.goo.gl/Yst88cp8w4nFaFuQ8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn-secondary view-map">GET DIRECTIONS 📍</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 2: Banquet -->
+                    <div class="schedule-card slide-right-reveal">
+                        <div class="card-icon">🍽️</div>
+                        <h4 class="card-title">THE GRAND FEAST </h4>
+                        <div class="card-meta">
+                            <span class="card-time">6:00 PM - 9.00 PM</span>
+                            <span class="card-venue">Kamaleswaram Nagarasabha Convention Centre, MLA Road, Manacaud P.Ο.</span>
+                        </div>
+                        <p class="card-details"></p>
+                        <div class="card-actions">
+                            <a href="#" class="btn-secondary add-calendar" data-event="reception">ADD TO CALENDAR</a>
+                            <a href="https://maps.app.goo.gl/Yst88cp8w4nFaFuQ8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn-secondary view-map">GET DIRECTIONS 📍</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+       
+
+        <!-- WISHES BOARD -->
+        <section id="wishes" class="wishes-section">
+            <div class="container">
+                <h3 class="section-title text-center slide-up-reveal">Best compliments from:</h3>
+                <p class="section-desc text-center slide-up-reveal">Saahir, Ayra, Safwana, Safna,  Aiza</p>
+                
+                
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p class="footer-hashtag">#SHENIN&AMEENA</p>
+        <p class="footer-info"></p>
+        <p class="footer-copyright">&copy; 2026 WEDDING INIVITATION</p>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Gallery">&times;</button>
+        <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous Image">&#10094;</button>
+        <button class="lightbox-nav next" id="lightbox-next" aria-label="Next Image">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged photo">
+            <video id="lightbox-video" src="" controls loop playsinline style="display: none; max-width: 100%; max-height: 75vh; border-radius: 4px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); border: 1.5px solid var(--color-brand-primary); object-fit: contain; background: #000;"></video>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Script Entry -->
+    <script src="app.js"></script>
+</body>
+</html>
